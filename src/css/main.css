@@ -1,11 +1,253 @@
-:root {
+/*
+- Mobile: 375px
+- Desktop: 1440px
 
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+- Weights: 300, 400, 600
+*/
+:root {
+  /* Primary Colors */
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  
+  /* Neutral Colors */
+  --dark-grayish-red: hsl(0, 6%, 24%);
+
+  /* Gradients */
+  --main-gradient-start: hsl(0, 0%, 100%);
+  --main-gradient-end: hsl(0, 100%, 98%);
+  --secondary-gradient-start: hsl(0, 80%, 86%);
+  --secondary-gradient-end: hsl(0, 74%, 74%);
 }
 
 body {
-
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .App {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 57.7% 42.3%;
+}
 
+.mobileLogoWrapper {
+  height: 33px;
+  width:  158px;
+  background-image: url(../images/logo.svg);
+  display: none;
+}
+
+.backgroundImageWrapper {
+  background-image: url(../images/hero-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.callToActionWrapper {
+  height: 100%;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-size: cover;
+  display:grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.callToActionContainer {
+  width: 515px;
+}
+
+.desktopLogoWrapper {
+  height: 33px;
+  width:  158px;
+  position: relative;
+  top: -70px;
+  background-image: url(../images/logo.svg);
+}
+
+.bannerWrapper {
+  padding-top:60px;
+}
+
+.bannerText {
+  color: var(--desaturated-red);
+  font-size: 60px;
+  font-weight: 300;
+  letter-spacing: 19px;
+  line-height: 70px;
+}
+
+.bold {
+  color: var(--dark-grayish-red);
+  font-weight: 600;
+}
+
+.bannerDescription {
+  margin-top: 25px;
+  color: var(--desaturated-red);
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  padding-right: 80px;
+}
+
+#emailInput {
+  height: 55px;
+  width: 390px;
+  border: 1px solid var(--desaturated-red);
+  border-radius: 25px;
+  padding-left: 30px;
+  margin-top: 40px;
+  outline: none;
+}
+
+#emailInput::placeholder {
+  color: var(--desaturated-red);
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.emailSubmitButton {
+  width:100px;
+  height: 55px;
+  border-radius: 25px;
+  border: none;
+  background-image: linear-gradient(90deg, var(--secondary-gradient-start), var(--secondary-gradient-end));
+  padding: 0 45px 0 45px;
+  position:relative;
+  top: 22.5px;
+  left: -40px;
+  box-shadow: 0px 10px 20px hsl(0, 36%, 85%);
+  outline: none;
+}
+
+.arrowIcon {
+  height: 20px;
+  width: 20px;
+  background-image: url(../images/icon-arrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.emailSubmitButton:hover {
+  background-image: none;
+  background-color: hsl(0, 93%, 88%);
+  box-shadow: 0px 10px 20px hsl(0, 36%, 75%);
+}
+
+.emailSubmitButton:active {
+  background-color: var(--soft-red);
+}
+
+.inputError {
+  font-size: 13px;
+  color: var(--soft-red);
+  padding:10px 30px;
+  visibility: hidden;
+} 
+
+@media screen and (max-width: 1100px) {
+  .callToActionWrapper {
+    padding-left:50px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    grid-template-columns: 70% 30%;
+  }
+
+  .callToActionWrapper {
+    padding-left:90px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .desktopLogoWrapper {
+    top: 0px;
+    margin-top:20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .desktopLogoWrapper {
+    display: none;
+  }
+
+
+  .App {
+    grid-template-rows: 100px 250px 450px;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    justify-content:center;
+  }
+
+  .mobileLogoWrapper {
+    min-height: 100px;
+    display: grid;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left:30px;
+    background-position-y: 50%;
+  }
+
+  .backgroundImageWrapper {
+    height: 250px;
+    width: 100%;
+    background-image: url(../images/hero-mobile.jpg);
+    background-size:100% 100%;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .callToActionWrapper {
+    align-self:start;
+    padding: 0;
+  }
+   
+  .callToActionContainer {
+    width: 375px;
+  }
+
+  .bannerText {
+    font-size: 42px;
+    line-height: 46px;
+    text-align: center;
+    letter-spacing: 10px;
+  }
+
+  .bannerDescription {
+    font-size: 13px;
+    text-align: center;
+    padding: 0 35px;
+    margin-top: 10px;
+    line-height: 21px; 
+  }
+  
+  .emailWrapper {
+    display:grid;
+    justify-content:center;
+  }
+
+  #emailInput {
+    height: 50px;
+    width: 310px;
+  }
+
+  .emailSubmitButton {
+    height: 50px;
+    width: 70px;
+    padding: 0 30px;
+    top:-50px;
+    left: 240px;
+  }
+
+  .inputError {
+    position: relative;
+    top: -50px;
+  }
 }
