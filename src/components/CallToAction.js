@@ -26,12 +26,17 @@ let CallToAction = (props) => {
             type="text"
             id="emailInput"
             name="emailInput"
+            title="emailInput"
             value={userEmail}
             placeholder="Email Address"
             onChange={handleEmailChange}
             style={inputError ? errorStyle : null}
           />
-          <button type="submit" className="emailSubmitButton">
+          <button
+            title="submitButton"
+            type="submit"
+            className="emailSubmitButton"
+          >
             <div className="arrowIcon"></div>
           </button>
           <p
