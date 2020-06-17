@@ -22,6 +22,7 @@ let CallToAction = (props) => {
           <p className="bannerDescription">{`Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.`}</p>
         </div>
         <form className="emailWrapper" onSubmit={handleEmailSubmit}>
+          <label for="emailInput"></label>
           <input
             type="text"
             id="emailInput"
@@ -32,12 +33,15 @@ let CallToAction = (props) => {
             onChange={handleEmailChange}
             style={inputError ? errorStyle : null}
           />
+          <label for="submitButton"></label>
           <button
             title="submitButton"
             type="submit"
             className="emailSubmitButton"
+            id="submitButton"
+            name="submitButton"
           >
-            <div className="arrowIcon"></div>
+            <span className="arrowIcon"></span>
           </button>
           <p
             className="inputError"
