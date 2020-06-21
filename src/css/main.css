@@ -151,6 +151,13 @@ body {
   visibility: hidden;
 } 
 
+.inputErrorIcon {
+  position: relative;
+  top: -72px;
+  left: 310px;
+  visibility: hidden;
+}
+
 @media screen and (max-width: 1100px) {
   .callToActionWrapper {
     padding-left:50px;
@@ -251,6 +258,11 @@ body {
   .inputError {
     position: relative;
     top: -50px;
+  }
+
+  .inputErrorIcon {
+    top: -120px;
+    left: 205px;
   }
 }
 

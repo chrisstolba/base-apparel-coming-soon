@@ -1,4 +1,5 @@
 import React from "react";
+import errorIcon from "../images/icon-error.svg";
 
 let CallToAction = (props) => {
   let { handleEmailSubmit, handleEmailChange, userEmail, inputError } = props;
@@ -49,6 +50,12 @@ let CallToAction = (props) => {
           >
             Please provide a valid email
           </p>
+          <img
+            className="inputErrorIcon"
+            src={errorIcon}
+            alt="Error Icon"
+            style={inputError ? inputErrorMessage : null}
+          />
         </form>
       </div>
     </main>
