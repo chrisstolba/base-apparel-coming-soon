@@ -5,6 +5,8 @@ import "./css/main.css";
 
 import CallToAction from "./components/CallToAction";
 
+import desktopBackgroundImage from "./images/hero-desktop.jpg";
+
 let App = () => {
   let [userEmail, setUserEmail] = useState(null);
   let [inputError, setInputError] = useState(false);
@@ -35,7 +37,11 @@ let App = () => {
         handleEmailChange={handleEmailChange}
         inputError={inputError}
       />
-      <div className="backgroundImageWrapper"></div>
+      <img
+        className="backgroundImageWrapper"
+        src={desktopBackgroundImage}
+        alt="Background Image"
+      />
     </div>
   );
 };

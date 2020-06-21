@@ -43,9 +43,9 @@ body {
 }
 
 .backgroundImageWrapper {
-  background-image: url(../images/hero-desktop.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .callToActionWrapper {
@@ -206,11 +206,10 @@ body {
 
   .backgroundImageWrapper {
     height: 250px;
-    width: 100%;
-    background-image: url(../images/hero-mobile.jpg);
-    background-size:100% 100%;
     grid-row-start: 2;
     grid-row-end: 3;
+    object-position: top left;
+    object-fit: cover;
   }
 
   .callToActionWrapper {
